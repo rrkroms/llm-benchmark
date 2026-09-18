@@ -1,0 +1,37 @@
+{
+  "benchmark": "Professional Local LLM Benchmark",
+  "model": "example-local-model",
+  "run": 1,
+  "timestamp_utc": "2026-01-01T00:00:00Z",
+  "settings": {
+    "temperature": 0,
+    "max_output_tokens": 8000
+  },
+  "tasks": [
+    {
+      "task_id": "math_001",
+      "parameter": "math",
+      "score": 100,
+      "notes": "All four answers correct.",
+      "evidence": ["Evaluator answer key match"],
+      "response_file": "responses/math_001.md"
+    },
+    {
+      "task_id": "struct_001",
+      "parameter": "structured_output",
+      "score": 100,
+      "notes": "JSON schema valid.",
+      "evidence": ["JSON parser succeeded", "Required keys and types valid"],
+      "response_file": "responses/struct_001.txt"
+    }
+  ],
+  "metrics": {
+    "latency_ms": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "tokens_per_second": 0,
+    "peak_vram_mb": null,
+    "tool_calls": 0,
+    "failed_tool_calls": 0
+  }
+}

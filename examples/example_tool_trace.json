@@ -1,0 +1,26 @@
+{
+  "task_id": "agent_001",
+  "calls": [
+    {
+      "step": 1,
+      "tool": "list_files",
+      "arguments": {"path": "."},
+      "result": ["app/", "tests/", "docs/"],
+      "success": true
+    },
+    {
+      "step": 2,
+      "tool": "search_code",
+      "arguments": {"query": "return None"},
+      "result": ["app/orders/repository.py:12"],
+      "success": true
+    },
+    {
+      "step": 3,
+      "tool": "run_tests",
+      "arguments": {"command": "pytest -q"},
+      "result": "1 failed, 2 passed",
+      "success": false
+    }
+  ]
+}
