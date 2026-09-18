@@ -1,0 +1,20 @@
+{
+  "benchmark": "Professional Local LLM Benchmark",
+  "model": "MODEL_NAME",
+  "run": 1,
+  "tasks": [
+    {"task_id": "se_001", "parameter": "software_engineering", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "se_002", "parameter": "software_engineering", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "se_003", "parameter": "software_engineering", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "agent_001", "parameter": "agentic_execution", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "inst_001", "parameter": "instruction_following", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "reason_001", "parameter": "reasoning", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "repo_001", "parameter": "repository_context", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "rel_001", "parameter": "reliability_verification", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "math_001", "parameter": "math", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "know_001", "parameter": "knowledge", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "vision_001", "parameter": "vision", "score": 0, "notes": "", "evidence": []},
+    {"task_id": "struct_001", "parameter": "structured_output", "score": 0, "notes": "", "evidence": []}
+  ],
+  "metrics": {}
+}

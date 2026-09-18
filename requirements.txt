@@ -1,0 +1,2 @@
+# Core runner/scorer use Python standard library only.
+# Optional: install jsonschema if you want external schema validation.

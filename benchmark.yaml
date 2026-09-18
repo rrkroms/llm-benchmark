@@ -1,0 +1,57 @@
+benchmark:
+  name: Professional Local LLM Benchmark
+  version: 1.0.0
+  score_scale: 0-100
+  deterministic_preference:
+    temperature: 0
+    top_p: 1
+    seed: 42
+  repetitions: 3
+  timeout_seconds: 300
+  max_output_tokens: 8000
+  local_only_default: true
+
+parameters:
+  software_engineering:
+    weight: 20
+    tasks: [se_001, se_002, se_003]
+  agentic_execution:
+    weight: 20
+    tasks: [agent_001]
+  instruction_following:
+    weight: 15
+    tasks: [inst_001]
+  reasoning:
+    weight: 10
+    tasks: [reason_001]
+  repository_context:
+    weight: 10
+    tasks: [repo_001]
+  reliability_verification:
+    weight: 8
+    tasks: [rel_001]
+  math:
+    weight: 5
+    tasks: [math_001]
+  knowledge:
+    weight: 5
+    tasks: [know_001]
+  vision:
+    weight: 4
+    tasks: [vision_001]
+  structured_output:
+    weight: 3
+    tasks: [struct_001]
+
+execution:
+  suites:
+    core: [se_001, se_002, se_003, agent_001, inst_001, reason_001, repo_001, rel_001, math_001, know_001, struct_001]
+    vision: [vision_001]
+    all: [se_001, se_002, se_003, agent_001, inst_001, reason_001, repo_001, rel_001, math_001, know_001, vision_001, struct_001]
+
+scoring:
+  method: weighted_mean
+  parameter_score_formula: "sum(task_scores) / number_of_tasks"
+  final_score_formula: "sum(parameter_score * parameter_weight / 100)"
+  rounding_decimals: 2
+  missing_task_score: 0

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LLM Benchmark Result",
+  "type": "object",
+  "required": ["benchmark", "model", "run", "tasks"],
+  "properties": {
+    "benchmark": {"type": "string"},
+    "model": {"type": "string"},
+    "run": {"type": "integer", "minimum": 1},
+    "timestamp_utc": {"type": "string"},
+    "settings": {"type": "object"},
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["task_id", "parameter", "score"],
+        "properties": {
+          "task_id": {"type": "string"},
+          "parameter": {"type": "string"},
+          "score": {"type": "number", "minimum": 0, "maximum": 100},
+          "notes": {"type": "string"},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "response_file": {"type": "string"},
+          "tool_trace_file": {"type": "string"}
+        }
+      }
+    },
+    "metrics": {"type": "object"}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tool Trace",
+  "type": "object",
+  "required": ["task_id", "calls"],
+  "properties": {
+    "task_id": {"type": "string"},
+    "calls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step", "tool", "arguments", "result"],
+        "properties": {
+          "step": {"type": "integer", "minimum": 1},
+          "tool": {"type": "string"},
+          "arguments": {"type": "object"},
+          "result": {},
+          "success": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}
